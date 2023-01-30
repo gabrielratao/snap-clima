@@ -15,10 +15,9 @@ const feelsLikeTemperature = document.getElementById('feels-like-temperature')
 const currentHumidity = document.getElementById('current-humidity')
 const sunriseTime = document.getElementById('sunrise-time')
 const sunsetTime = document.getElementById('sunset-time')
-const tempMax = document.getElementById('temp-max')
-const tempMin = document.getElementById('temp-min')
 
-//const api_key = "4b59b987e36efab9433f59832623c3c7";
+
+
 var api_key = config.MY_KEY
 
 //escutar o click do botão      () -> função anonima
@@ -91,7 +90,6 @@ function displayWeather(data) {
         dt,
         name,
         weather: [{ icon, description }],
-        //adcionando temp_max e temp_min
         main: { temp, feels_like, humidity,},
         wind: { speed },
         sys: { country, sunrise, sunset},
