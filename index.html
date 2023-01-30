@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+
+
+    <title>Clima Agora</title>
+
+    <!--fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    
+    <!--cabeçalho   -->
+    <header class="header">
+        <!--começar com o input para pesquisar a cidade
+        placeholder => vai ficar dentro do botão em segundo plano     -->
+        <div class="header__city-search-bar">
+
+            <input 
+            class="header__input" 
+            type="text" 
+            placeholder="Temperatura de qual cidade?" 
+            id="city-search-input">
+
+            <button 
+            class="header__button" 
+            id="city-search-button">
+                <img class="header__button-icon" src="./assets/search-icon.svg" alt="Ícone de lupa">
+            </button>
+
+        </div>
+
+        <div class="header__current-date" id="current-date">...</div>  <!--data-->
+        <div class="header__city-name" id="city-name">...</div> <!--cidade-->
+
+
+    </header>
+
+    <!--seção    section => seção independente   -->
+    <section class="current-temperature">
+
+        <!--imagem do clima-->
+        <img 
+        class="current-temperature__weather-icon" 
+        id="weather-icon"
+        src="./assets/loading-icon.svg" 
+        alt="Ícone que ilustra a temperatura atual" 
+        aria-hidden="true"> <!--aria-hidden vai impedir que o icone seja lida no alt-->
+
+        <div class="current-temperature__description" id="weather-description">
+            ...
+        </div>  <!--como ta o tempo-->
+
+        <div class="current-temperature__info-label">
+            Tempo agora
+        </div>
+
+        <div class="current_temperature__current-temperature" id="current-temperature">
+            ...
+        </div>  <!--temperatura agora-->
+ 
+
+    </section>
+
+
+
+    <!--um blocao pra mostrar informações adcionais:
+        SEÇÃO 1
+    -   vento  |  sensação  |   umidade 
+        SEÇÃO 2
+    -   sunrise    |     sunset-->
+
+    <div class="bottom-container">  <!--blocao-->
+
+
+        <section class="temperature-details"> <!--seção 1-->
+
+            <div class="temperature-details__item">
+
+                <div class="temperature-details__label">Vento</div>
+                <div class="temperature-details__value" id="wind-speed">...</div>
+
+            </div>  
+
+            <div class="temperature-details__item">
+
+                <div class="temperature-details__label">Sensação</div>
+                <div class="temperature-details__value" id="feels-like-temperature">...</div>
+
+            </div>  
+
+            <div class="temperature-details__item">
+
+                <div class="temperature-details__label">Umidade</div>
+                <div class="temperature-details__value" id="current-humidity">...</div>
+
+            </div>  
+
+        </section>
+           
+
+        <!--seção 2-->
+        <section class="sunset-sunrise">
+            <!--sunrise-->
+            <div class="sunset-sunrise__item">
+
+                <img class="sunset-sunrise__icon" src="./assets/sunrise.svg" alt="Nascer do sol"> 
+                <div class="sunset-sunrise__value" id="sunrise-time">
+                    ...
+                </div>
+
+            </div>
+
+            <!--sunset-->
+            <div class="sunset-sunrise__item">
+
+                <img class="sunset-sunrise__icon" src="./assets/sunset.svg" alt="Pôr do sol">
+                <div class="sunset-sunrise__value" id="sunset-time">
+                    ...
+                </div>
+
+            </div>
+        </section>
+        
+        
+    </div>
+
+
+
+    <!--ADCIONANDO O JAVASCRIPT-->
+
+    <script type="text/javascript" src="./config.js"></script>
+    <script src="./script.js"></script>
+    
+</body>
+
+</html>
