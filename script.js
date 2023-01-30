@@ -18,7 +18,7 @@ const sunsetTime = document.getElementById('sunset-time')
 
 
 
-var api_key = config.MY_KEY
+const api_key = "4b59b987e36efab9433f59832623c3c7"
 
 //escutar o click do botão      () -> função anonima
 citySearchButton.addEventListener("click", () => {
