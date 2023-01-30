@@ -10,6 +10,8 @@
     <img src="./preview.png" alt="Demonstração da Aplicação">
 </p>
 
+O projeto foi desenvolvido na imersão criada pelo <a href="https://www.instagram.com/brenocuper/">Breno Cuper</a>.
+
 ## 📚 Tecnologias Utilizadas
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -20,6 +22,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Weather API 
 
 ## 📡 O PROJETO
+
+Visite o projeto <a href="https://gabrielratao.github.io/snapClima">online</a>.
 
 <p>
     A aplicação utiliza a API forrnecida gratuitamente pela plataforma <strong>OpenWeather<a href="https://openweathermap.org/"></a>.</strong>
@@ -45,4 +49,30 @@ A API da OpenWeather retorna diversas informações dentre as quais selecionamos
 - Umidade
 - Horário do nascer e pôr do sol
 
-O projeto foi desenvolvido na imersão criada pelo <a href="https://www.instagram.com/brenocuper/">Breno Cuper</a>.
+## MELHORIAS 
+
+Eu adcionei algumas alterações no código desenvolvido em aula:
+
+### Dois problemas identificados
+
+
+<strong>1-</strong>
+
+Após alguns testes nos dados, identifiquei que o horário do nascer e pôr do sol ficaram com uma falha na formatação.
+
+Quando o minuto atual era menor que 10, por exemplo 19:08, o programa retornava 19:8. 
+
+Com isso, adcionei uma condicional para ajustar esse valor.
+
+<strong>2-</strong>
+
+Por se tratar de uma API que busca dados globais, identifiquei que algumas cidades brasileiras possuem o mesmo nome de cidades estrangeiras. 
+
+Com isso adcionei no nome da cidade pesquisa o seu país de origem, exemplo:
+
+- Toronto, CA
+- São Paulo, BR
+
+
+
+
