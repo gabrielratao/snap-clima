@@ -6,7 +6,7 @@
 
 
 
-<p>
+<p align="center">
     <img src="./preview.png" alt="Demonstração da Aplicação">
 </p>
 
