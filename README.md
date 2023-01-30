@@ -49,7 +49,7 @@ A API da OpenWeather retorna diversas informações dentre as quais selecionamos
 - Umidade
 - Horário do nascer e pôr do sol
 
-## MELHORIAS NO PROJETO
+## 🔎 MELHORIAS NO PROJETO
 
 Eu adcionei algumas alterações no código desenvolvido em aula:
 
