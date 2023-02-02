@@ -212,11 +212,41 @@ body {
     margin: 30px auto;
 }
 
-.sunset-sunrise__item {
+.sunset-sunrise__item1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    
+}
+
+.sunset-sunrise__item2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+
+
+.current-air-quality {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-left: 1px solid #a2a2be;
+    
+    
 }
 
+.current-air-quality__info-label {
+    color: #a2a2be;
+}
 
+.current-air-quality__current-air-quality {
+    font-weight: 500;
+    margin-top: 5px;
+}

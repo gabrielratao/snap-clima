@@ -15,7 +15,7 @@ const feelsLikeTemperature = document.getElementById('feels-like-temperature')
 const currentHumidity = document.getElementById('current-humidity')
 const sunriseTime = document.getElementById('sunrise-time')
 const sunsetTime = document.getElementById('sunset-time')
-
+const airQuality = document.getElementById('air-quality')
 
 
 const api_key = "4b59b987e36efab9433f59832623c3c7"
@@ -29,11 +29,9 @@ citySearchButton.addEventListener("click", () => {
 
     let cityName = citySearchInput.value
     getCityWeather(cityName)
+    
+    
 })
-
-
-//https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-
 
 //buscar a localização do usuario
 //position -> retorna a posição
@@ -46,7 +44,7 @@ navigator.geolocation.getCurrentPosition(
     let lon = position.coords.longitude
 
     getCurrentLocationWeather (lat, lon)
-
+    
 
     },
     //se o usuario negar exibe o erro
@@ -64,6 +62,7 @@ navigator.geolocation.getCurrentPosition(
 
 )
 
+//funções para acessar a API
 function getCurrentLocationWeather (lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${api_key}`)
     .then((response) => response.json())
@@ -83,6 +82,40 @@ function getCityWeather (cityName) {
     
 }
 
+//qualidade do ar
+function getLocationAirQuality (lat, lon) {
+    fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${api_key}`)
+    .then((response2) => response2.json())
+    .then((data2) => displayAirQuality(data2))
+}
+
+function displayAirQuality (data2){
+    let {
+        list: [{main: {aqi}}],
+
+    } = data2
+
+    let quality = ''
+
+    if (aqi === 1) {
+        quality = 'Muito boa'
+    }
+    if (aqi === 2) {
+        quality = 'Boa'
+    }
+    if (aqi === 3) {
+        quality = 'Moderado'
+    }
+    if (aqi === 4) {
+        quality = 'Ruim'
+    }
+    if (aqi === 5) {
+        quality = 'Muito ruim'
+    }
+
+    airQuality.textContent = quality
+    
+}
 
 function displayWeather(data) {
     //desestruturar os objetos
@@ -93,6 +126,7 @@ function displayWeather(data) {
         main: { temp, feels_like, humidity,},
         wind: { speed },
         sys: { country, sunrise, sunset},
+        coord: {lat , lon}
 
     } = data
 
@@ -108,6 +142,10 @@ function displayWeather(data) {
     currentHumidity.textContent = `${humidity}%`
     sunriseTime.textContent = formatTime(sunrise)
     sunsetTime.textContent = formatTime(sunset)
+
+    
+    //request da api para qualidade do ar independemente se a cidade for pesquisada ou buscado pela geolocalização do usuario
+    getLocationAirQuality (lat, lon)
     
 }
 
@@ -116,6 +154,7 @@ function displayWeather(data) {
 function formatDate (epochTime) {
     let date = new Date(epochTime * 1000)
     let formattedDate = date.toLocaleDateString('pt-BR' , { month: "long", day: "numeric" })
+    
     
     return `Hoje, ${formattedDate}`
 }

@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" href="./style.css">
 
+    <link rel="icon" href="./assets/01d.svg">
+
 </head>
 
 <body>
@@ -70,11 +72,7 @@
             ...
         </div>  <!--temperatura agora-->
  
-
     </section>
-
-
-
     <!--um blocao pra mostrar informações adcionais:
         SEÇÃO 1
     -   vento  |  sensação  |   umidade 
@@ -113,7 +111,7 @@
         <!--seção 2-->
         <section class="sunset-sunrise">
             <!--sunrise-->
-            <div class="sunset-sunrise__item">
+            <div class="sunset-sunrise__item1">
 
                 <img class="sunset-sunrise__icon" src="./assets/sunrise.svg" alt="Nascer do sol"> 
                 <div class="sunset-sunrise__value" id="sunrise-time">
@@ -123,15 +121,49 @@
             </div>
 
             <!--sunset-->
-            <div class="sunset-sunrise__item">
+            <div class="sunset-sunrise__item2">
 
                 <img class="sunset-sunrise__icon" src="./assets/sunset.svg" alt="Pôr do sol">
                 <div class="sunset-sunrise__value" id="sunset-time">
                     ...
                 </div>
+            </div>
+
+            <div class="current-air-quality">
+
+                <div class="current-air-quality__info-label">
+                    Qualidade do Ar
+                </div>
+    
+                    
+                <div class="current-air-quality__current-air-quality" id="air-quality">
+                    ...
+                </div>
+
 
             </div>
+            
         </section>
+
+        <!--Seção para mostrar a qualidade do ar-->
+        
+        <!--
+        <section class="current-air-quality"> 
+
+            
+            <div class="current-air-quality__info-label">
+                Qualidade do Ar
+            </div>
+
+                
+            <div class="current-air-quality__current-air-quality" id="air-quality">
+                ...
+            </div>
+
+        </section>
+
+        -->
+        
         
         
     </div>
