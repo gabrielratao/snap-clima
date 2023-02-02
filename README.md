@@ -30,7 +30,7 @@ Visite o projeto <a href="https://gabrielratao.github.io/snapClima">online</a>.
 </p>
 
 
-O projeto permite o usuário consultar em tempo real informações meteorológicas à partir da sua geolocalização. Além disso, há a opção de buscar manualmente, por meio de barra de pesquisa, por essas informações de qualquer cidade do planeta.
+O projeto permite o usuário consultar em tempo real informações meteorológicas a partir da sua geolocalização. Além disso, há a opção de buscar manualmente, por meio de barra de pesquisa, por essas informações de qualquer cidade do planeta.
 
 Ao acessar a aplicação pela primeira vez, o sistema solicitará permissão da localização do usuário. Caso o usuário permita, a informação (latitude e longitude) é utilizada pelo programa que faz um <strong>_request_</strong> à API e tem como <strong>_response_</strong> uma série de informações. 
 
